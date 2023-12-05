@@ -88,10 +88,63 @@
   --weight-regular: 400;
   --weight-medium: 500;
 
-  /* border radius */
-  
+  /** 
+    BORDER RADIUS
+  */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-circle: 50%;
+  --radius-pill: 500px;
 
-}
+  /** 
+    BOX SHADOW
+  */
+  --shadow-1: 0 -1px 8px hsla(0, 0%, 0%, 0.2);
+  --shadow-2: 0 2px 4px 1px hsla(0, 0%, 0%, 0.3);
+
+  /** 
+    OTHERS
+  */
+  --header-height: 64px;
+  --mobile-nav-height: 80px;
+  --section-gap: 32px;
+
+ 
+} 
+
+ @media(prefers-reduced-motion: no-preference) {
+    :root {
+      /**
+        TRANSITION
+      */
+      --transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+      --transition-short: 200ms var(--transition-timing-function);
+      --transition-medium: 500ms var(--transition-timing-function)
+
+    }
+ }
+
+ [data-theme="light"] {
+  color-scheme: light;
+
+  --background: var(--light-background);
+  --on-background: var(--light-on-background);
+  --on-background-variant: var(--light-on-background-variant);
+  --primary: var(--light-primary);
+  --primary-hover: var(--light-primary-hover);
+  --primary-container: var(--light-primary-container);
+  --error: var(--light-error);
+  --active-indicator: var(--light-active-indicator);
+  --image-background: var(--light-image-background);
+  --badge-btn: var(--light-badge-btn);
+  --on-badge-btn: var(--light-on-badge-btn);
+  --outline: var(--light-outline);
+  --input-outline: var(--light-input-outline);
+  --input-outline: var(--light-input-outline);
+  --alpha-10: var(--light-alpha-10);
+  --alpha-20: var(--light-alpha-20);
+ }
+
 
 
 
