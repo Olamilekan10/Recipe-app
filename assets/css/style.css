@@ -380,14 +380,52 @@ main {flex-grow: 1 }
  * Icon Button
  */
 
+ .icon-btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background-color: var(--primary-container);
+  border-radius: var(--radius-circle);
+ }
 
 /**
  * Button
  */
 
+ .btn {
+  height: 40px;
+  max-width: max-content;
+  padding-inline: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-4);
+  transition: var(--transition-short);
+ }
+
+ .btn .material-symbols-outlined { font-size: 1.8rem; }
+
+ .btn.has-state { padding-inline-start: 16px; }
+
 /* primary button */
 
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:where(:hover, :focus-visible):not(:active) {
+  background-color: var(--primary-hover);
+}
+
 /* secondary button */
+
+.btn-secondary {
+  background-color: var(--primary-container);
+
+}
 
 /* badge button */
 
@@ -426,7 +464,14 @@ main {flex-grow: 1 }
   #HEADER
 \*-----------------------------------*/
 
+.navbar,
+.header .btn-primary { display: none }
 
+.header {
+  background-color: var(--background);
+  position: fixed;
+  
+}
 
 
 
