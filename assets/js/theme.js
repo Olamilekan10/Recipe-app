@@ -5,3 +5,5 @@
  */
 
 "use strict";
+
+const /** [ModeElement] */  $HTML = document.documentElement;
