@@ -475,7 +475,6 @@ main {flex-grow: 1 }
   width: 100%;
   height: var(--header-height);
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 20px;
   padding-inline: 16px;
@@ -485,8 +484,8 @@ main {flex-grow: 1 }
 
 .theme-switch { margin-inline-start: auto; }
 
-[data-theme="light"] :where(.logo-dark .theme-switch .light-icon),
-[data-theme="dark"] :where(.logo-light .theme-switch .dark-icon) {
+[data-theme="light"] :where(.logo-dark, .theme-switch .light-icon),
+[data-theme="dark"] :where(.logo-light, .theme-switch .dark-icon) {
   display: none;
 }
 
