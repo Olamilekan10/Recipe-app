@@ -506,6 +506,20 @@ main {flex-grow: 1 }
   box-shadow: var(--shadow-1);
 }
 
+.mobile-nav .nav-list {
+  display: grid;
+  grid-template-columns: repeat(3, ifr);
+  text-align: center;
+}
+
+.mobile-nav .nav-link[ aria-current="true"] { color: var(--on-background); }
+
+.mobile-nav .item-icon {
+  width: 64px;
+  height: 32px;
+  display: grid;
+  align-items: center;
+}
 
 
 
