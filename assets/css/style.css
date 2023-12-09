@@ -508,7 +508,7 @@ main {flex-grow: 1 }
 
 .mobile-nav .nav-list {
   display: grid;
-  grid-template-columns: repeat(3, ifr);
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
 }
 
