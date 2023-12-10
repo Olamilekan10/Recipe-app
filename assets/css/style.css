@@ -536,6 +536,7 @@ main {flex-grow: 1 }
 
 .mobile-nav .nav-link[ aria-current="true"] .material-symbols-outlined {
   font-variation-settings: "FILL" 1;
+  
 }
 
 
