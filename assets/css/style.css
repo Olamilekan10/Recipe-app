@@ -547,6 +547,23 @@ main {flex-grow: 1 }
   #HERO
 \*-----------------------------------*/
 
+.hero { padding-inline: 16px;}
+
+.banner-card {
+  background-color: var(--image-background);
+  color: var(--white);
+  background-image: url(../images/hero-banner-small.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 480px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+  padding-inline: center;
+  border-radius: var(--radius-8);
+}
 
 
 
