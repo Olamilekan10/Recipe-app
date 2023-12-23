@@ -382,6 +382,10 @@ main {flex-grow: 1 }
   transition: var(--transition-short);
   flex: 1 0 80px;
  }
+ 
+ .tab-btn:where(:hover, :focus-visible):not(:active) {
+  background-color: var(--alpha-10);
+ }
 
  .tab-btn[aria-selected="true"] {
   color: var(--on-background);
@@ -638,7 +642,19 @@ main {flex-grow: 1 }
   #TAB
 \*-----------------------------------*/
 
+.tab .tab-list {
+  background-color: var(--background);
+  position: sticky;
+  top: var(--header-height);
+  margin-inline: -16px;
+  padding-inline: 16px;
+  margin-block: 16px 12px;
+  z-index: 1;
+}
 
+.tab-panel {
+  
+}
 
 
 
