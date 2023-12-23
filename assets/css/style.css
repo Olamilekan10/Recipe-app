@@ -383,7 +383,10 @@ main {flex-grow: 1 }
   flex: 1 0 80px;
  }
 
- 
+ .tab-btn[aria-selected="true"] {
+  color: var(--on-background);
+  border-color: var(--primary);
+ }
 
 
 
