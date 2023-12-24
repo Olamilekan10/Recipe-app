@@ -20,3 +20,15 @@ $searchBtn.addEventListener("click", function () {
 /**
  * Search submit when pressing "Enter"
  */
+
+$searchField.addEventListener("keydown", e => {
+    if (e.key === "Enter") $searchBtn.click();
+});
+
+
+/**
+ * Tab panel navigation
+ */
+
+const /** {NodeList} */ $tabBtns = document.querySelectorAll("[data-tab-btn]");
+const /** {NodeList} */ $tabPanels = document.querySelectorAll("[data-tab-panel]");
