@@ -807,7 +807,7 @@ main {flex-grow: 1 }
 \*-----------------------------------*/
 
 
-.slide {
+.slider {
    --gap: 8px;
    position: relative;
    overflow-x: auto;
@@ -851,12 +851,6 @@ main {flex-grow: 1 }
 
 
 
-
-
-
-
-
-
 /*-----------------------------------*\
   #TAG
 \*-----------------------------------*/
@@ -884,6 +878,24 @@ main {flex-grow: 1 }
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
+
+  .footer .logo { display: none; }
+
+  .footer {
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 12px;
+    border-block-start: 1px solid var(--outline);
+  }
+
+  .copywright { opacity: 0.8; }
+
+  .footer .edamam img { width: 180px; }
+
+
 
 
 
