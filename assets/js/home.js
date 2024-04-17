@@ -7,6 +7,15 @@
 "use strict";
 
 /**
+ * Import
+ */
+
+import { fetchData } from "./api.js";
+import { $skeletonCard } from "./global.js";
+
+
+
+/**
  * Home page search
  */
 
@@ -48,6 +57,8 @@ addEventOnElements($tabBtns, "click", function () {
 
     $lastActiveTabPanel = $currentTabPanel;
     $lastActiveTabBtn = this;
+
+    addTabContent(this, $currentTabPanel);
 });
 
 /**
@@ -72,3 +83,26 @@ addEventOnElements($tabBtns, "keydown", function(e) {
     }
     
 });
+
+
+
+/**
+ * WORK WITH API
+ * fetch data for tab content
+ */
+
+
+const addTabContent = ($currentTabBtn, $currentTabPanel) => {
+
+    const /** {NodeElement} */ $gridList = document.createElement("div");
+    $gridList.classList.add("grid-list");
+
+    $currentTabPanel.innerHTML = `
+     <div class="grid-list">
+        ${$skeletonCard.repeat(12)}
+     </div>
+    `;
+
+}
+
+addTabContent($lastActiveTabBtn, $lastActiveTabPanel);
