@@ -38,7 +38,7 @@ Saved
 Your desired dish?
 
 <span class="material-symbols-outlined leading-icon" aria-hidden="true">local_dining</span>
-
+d
 aria-label = Search recipes
 placeholder = Search recipes...
 

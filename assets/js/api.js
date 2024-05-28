@@ -7,9 +7,10 @@
 "use strict";
 
 window.ACCESS_POINT = "https://api.edamam.com/api/recipes/v2";
-const /** {String} */ API_ID = "96e63510";
-const /** {String} */ API_KEY = "8837c96b6f644ffbfbc2f129fe4364f6";
-const /** {String} */ TYPE = "public";
+const /** String */ APP_ID = "09afae7d";
+const /** String */ API_KEY = "0c5be89075e7772648c90bd9c5fdaa62";
+const /** String */ TYPE = "public";
+
 
 /** 
 * @param {Array} queries Query array  
@@ -18,17 +19,17 @@ const /** {String} */ TYPE = "public";
 
 
 export const fetchData = async function (queries, successCallback) {
-    const /** {String} */ query = queries?.join("&")
+    const /** String */ query = queries?.join("&")
         .replace(/,/g, "=")
         .replace(/ /g, "%20")
         .replace(/\+/g, "%2B");
-        
-    const /** {String} */ url = `${ACCESS_POINT}?api_id=${API_ID}&api_key=${API_KEY}&type=${TYPE}${query ? `&${query}` : ""}`;
+ 
+    const /** {String} */ url = `${ACCESS_POINT}?app_id=${APP_ID}&app_key=${API_KEY}&type=${TYPE}${query? `&${query}` : ""}`;
 
     const /** {Object} */ response = await fetch(url);
 
-    if(response.ok) {
+    if(response.ok) { 
         const data = await response.json();
         successCallback(data);
     }
-};
+}

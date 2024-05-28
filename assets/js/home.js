@@ -11,7 +11,7 @@
  */
 
 import { fetchData } from "./api.js";
-import { $skeletonCard } from "./global.js";
+import { $skeletonCard, cardQueries } from "./global.js";
 
 
 
@@ -102,6 +102,12 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
         ${$skeletonCard.repeat(12)}
      </div>
     `;
+
+    fetchData([['mealType', $currentTabBtn.textContent.trim().toLowerCase()], ...cardQueries], function data() {
+
+        console.log(data);
+        
+    });
 
 }
 
