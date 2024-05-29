@@ -105,7 +105,21 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
 
     fetchData([['mealType', $currentTabBtn.textContent.trim().toLowerCase()], ...cardQueries], function (data) {
 
-        console.log(data);
+        // console.log(data);
+        $currentTabPanel.innerHTML = "";
+
+        for (let i = 0; i < 12; i++) {
+
+            const {
+                recipe: {
+                    image,
+                    label: title,
+                    totalTime: cookingTime,
+                    uri
+                }
+            } = data.hits[i];
+            
+        }
         
     });
 
