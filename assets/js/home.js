@@ -151,9 +151,11 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
 
             `;
 
-            
+            $gridList.appendChild($card);
 
         }
+
+        $currentTabPanel
         
     });
 
