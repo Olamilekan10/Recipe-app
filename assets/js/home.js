@@ -103,7 +103,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
      </div>
     `;
 
-    fetchData([['mealType', $currentTabBtn.textContent.trim().toLowerCase()], ...cardQueries], function data() {
+    fetchData([['mealType', $currentTabBtn.textContent.trim().toLowerCase()], ...cardQueries], function (data) {
 
         console.log(data);
         
