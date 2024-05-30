@@ -209,6 +209,8 @@ href = https://www.edamam.com/
 edamam free recipe api
 
 
+<a href="./recipe.html" class="btn btn-secondary label-large has-state"></a>
+
 
 
 #============== RECIPES PAGE =============#

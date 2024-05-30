@@ -43,12 +43,12 @@ $searchField.addEventListener("keydown", e => {
 const /** {NodeList} */ $tabBtns = document.querySelectorAll("[data-tab-btn]");
 const /** {NodeList} */ $tabPanels = document.querySelectorAll("[data-tab-panel]");
 
-let /** NodeElement */ [$lastActiveTabPanel] = $tabPanels;
-let /** NodeElement */ [$lastActiveTabBtn] = $tabBtns;
+let /** {NodeElement} */ [$lastActiveTabPanel] = $tabPanels;
+let /** {NodeElement} */ [$lastActiveTabBtn] = $tabBtns;
 
 addEventOnElements($tabBtns, "click", function () {
     $lastActiveTabPanel.setAttribute("hidden", "");
-    $lastActiveTabBtn.setAttribute("arial-selected", false);
+    $lastActiveTabBtn.setAttribute("aria-selected", false);
     $lastActiveTabBtn.setAttribute("tabindex", -1);
 
     const /** {NodeList} */ $currentTabPanel = document.querySelector(`#${this.getAttribute("aria-controls")}`);
@@ -145,10 +145,10 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                     </div>
 
                     <button class="icon-btn has-state ${isSaved ? "saved" : "removed"}" aria-label="Add to saved recipes" onClick="saveRecipe(this, '${recipeId}')">
-                    </button>
-                    <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
 
-                    <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
+                        <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
+                    </button>
                 
                 </div>
             </div>

@@ -389,8 +389,6 @@ main {flex-grow: 1 }
 
 
 
-
-
 /*-----------------------------------*\
   #COMPONENTS
 \*-----------------------------------*/
@@ -530,7 +528,10 @@ main {flex-grow: 1 }
 
 .card .meta-item .material-symbols-outlined { font-size: 1.8rem; }
 
+.saved .bookmark-add, 
+.removed .bookmark { display: none; }
 
+.saved .bookmark { font-variation-settings: "FILL" 1; }
 
 
 /**

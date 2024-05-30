@@ -11,8 +11,8 @@ import { fetchData } from "./api.js";
 /**
  * Add event on multiple elements
  * @param {Nodelist} $elements NodeList
- * @param {String} $eventType Event type string
- * @param {function} callback callback function
+ * @param {String} eventType Event type string
+ * @param {Function} callback Callback function
  */
 
 window.addEventOnElements = ($elements, eventType, callback) => {
