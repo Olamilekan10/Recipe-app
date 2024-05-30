@@ -170,3 +170,26 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
 }
 
 addTabContent($lastActiveTabBtn, $lastActiveTabPanel);
+
+
+/**
+ * Fetch data for slider card
+ */
+
+let /** {Array} */ cuisineType = ["Asian", "French"];
+
+const /** {Nodelist} */ $sliderSections = document.querySelectorAll("[data-slider-section]");
+
+for (const [index, $sliderSection] of $sliderSection.entries()) {
+
+    $sliderSection.innerHTML = `
+        <div class="container">
+            <h2 class="section-title headline-small" id="slider-label-1">Latest ${cuisineType[index]} Recipes</h2>
+
+            <div class="slider">
+                <ul class="slider-wrapper" data-slider-wrapper>
+                </ul>
+        </div>
+    `;
+
+}
