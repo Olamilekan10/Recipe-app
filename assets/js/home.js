@@ -120,7 +120,8 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                 }
             } = data.hits[i];
 
-            console.log(uri);
+            const /** {String} */ recipeId = uri.slice(uri.lastIndexOf("_") + 1);
+            const /** {Undefined || String} */ isSaved = window.localStorage.getItem(`cookio-recipe${recipeId}`);
 
             const /** NodeElement */ $card = document.createElement('div');
             $card.classList.add("card");
@@ -133,7 +134,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
 
             <div class="card-body">
                 <h3 class="title-small">
-                    <a href="./detail.html" class="card-link">${title ?? "Untitled"}</a>
+                    <a href="./detail.html?recipe=${recipeId}" class="card-link">${title ?? "Untitled"}</a>
                 </h3>
                 <div class="meta-wrapper">
 
@@ -143,7 +144,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                         <span class="label-medium">${getTime(cookingTime).time || "<1"} ${getTime(cookingTime).timeUnit}</span>
                     </div>
 
-                    <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
+                    <button class="icon-btn has-state ${isSaved ? "saved" : "removed"}" aria-label="Add to saved recipes" onClick="saveRecipe(this, '${recipeId}')">
                     </button>
                     <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
 
