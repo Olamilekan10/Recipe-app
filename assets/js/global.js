@@ -54,7 +54,7 @@ window.saveRecipe = function(element, recipeId) {
     const /** {String} */ isSaved = window.localStorage.getItem(`cookio-recipe${recipeId}`);
     ACCESS_POINT = `${ROOT}/${recipeId}`;
     
-    if (isSaved) {
+    if (!isSaved) {
         fetchData(cardQueries, function (data) {
             window.localStorage.setItem(`cookio-recipe${recipeId}`, JSON.stringify(data)); 
             element.classList.toggle("saved");
