@@ -180,7 +180,7 @@ let /** {Array} */ cuisineType = ["Asian", "French"];
 
 const /** {Nodelist} */ $sliderSections = document.querySelectorAll("[data-slider-section]");
 
-for (const [index, $sliderSection] of $sliderSection.entries()) {
+for (const [index, $sliderSection] of $sliderSections.entries()) {
 
     $sliderSection.innerHTML = `
         <div class="container">
@@ -188,8 +188,12 @@ for (const [index, $sliderSection] of $sliderSection.entries()) {
 
             <div class="slider">
                 <ul class="slider-wrapper" data-slider-wrapper>
+                ${`<li class="slider-item">${$skeletonCard}</li>`.repeat(10)}
                 </ul>
+            </div>
         </div>
     `;
+
+    
 
 }
