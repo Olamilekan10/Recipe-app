@@ -6,13 +6,14 @@
 
 "use strict";
 
+
 /**
  * Import
  */
 
 import { fetchData } from "./api.js";
 import { $skeletonCard, cardQueries } from "./global.js";
-
+import { getTime } from "./module.js";
 
 
 /**
@@ -119,6 +120,8 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                 }
             } = data.hits[i];
 
+            console.log(uri);
+
             const /** NodeElement */ $card = document.createElement('div');
             $card.classList.add("card");
             $card.style.animationDelay = `${1000 * i}ms`;
@@ -137,7 +140,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                     <div class="meta-item">
                         <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
 
-                        <span class="label-medium">${cookingTime || "<1"} minutes</span>
+                        <span class="label-medium">${getTime(cookingTime).time || "<1"} ${getTime(cookingTime).timeUnit}</span>
                     </div>
 
                     <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
