@@ -245,8 +245,21 @@ for (const [index, $sliderSection] of $sliderSections.entries()) {
                     </div>
                 </div>
             `;
+
+            $sliderWrapper.appendChild($sliderItem);
             
         });
+
+        $sliderWrapper.innerHTML += `
+            
+            <li class="slider-item" data-slider-item>
+                <a href="./recipes.html?cuisineType=${cuisineType[index].toLowerCase()}" class="load-more-card has-state">
+                    <span class="label-large">Show more</span> 
+
+                    <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
+                </a>
+            </li>
+        `;
 
     });
 
