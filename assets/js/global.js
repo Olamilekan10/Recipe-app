@@ -67,3 +67,15 @@ window.saveRecipe = function(element, recipeId) {
         element.classList.toggle("removed");
     }
 }
+
+
+const /** {NodeElement} */ $snackbarContainer = document.createElement("div");
+$snackbarContainer.classList.add("snackbar-container"); 
+document.body.appendChild($snackbarContainer);
+
+function showNotification(message) {
+    const /** {NodeElement} */ $snackbar = document.createElement("div");
+    $snackbar.classList.add("snackbar");
+    // $snackbar.textContent = message;
+    // $snackbarContainer.appendChild($snackbar);
+}
