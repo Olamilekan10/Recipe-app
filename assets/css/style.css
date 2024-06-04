@@ -646,6 +646,21 @@ main {flex-grow: 1 }
   transition: var(--transition-short);
 }
 
+.input-field:focus::placeholder { opacity: 1; }
+
+.input-outlined .label {
+  position: absolute;
+  left: 16px;
+  opacity: 0.75;
+  background-color: var(--background);
+  padding-inline: 4px;
+  margin-inline: 4px;
+  pointer-events: nonw;
+  transition: var(--transition-short);
+}
+
+
+
 
 /**
  * Filter chip
