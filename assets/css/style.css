@@ -1096,8 +1096,9 @@ main {flex-grow: 1 }
   overflow: hidden;
 }
 
+.accordion-btn[aria-expanded="true"] { background-color: var(--alpha-10); }
 
-
+.accordion-btn[aria-expanded="true"] .trailing-icon { transform: rotate(180deg); }
 
 
 
