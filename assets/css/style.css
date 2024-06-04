@@ -654,17 +654,50 @@ main {flex-grow: 1 }
   opacity: 0.75;
   background-color: var(--background);
   padding-inline: 4px;
-  margin-inline: 4px;
+  margin-inline: -4px;
   pointer-events: nonw;
   transition: var(--transition-short);
 }
 
 
+.input-outlined:has(:focus, input:not(:placeholder-shown)) .label {
+  color: var(--primary);
+  transform: translateY(-27px) scale(0.75);
+  transform-origin: left center;
+  opacity: 1;
+
+}
 
 
 /**
  * Filter chip
  */
+
+.filter-chip {
+  height: 32px;
+  background-color: var(--background);
+  border: 1px solid var(--outline);
+  display: grid;
+  place-items: center;
+  padding-inline: 16px;
+  border-radius: var(--radius-8);
+  user-select: none;
+  cursor: pointer;
+}
+
+.filter-chip .checkbox {
+  appearance: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  opacity: 0;
+}
+
+.filter-chip:has(:focus-visible) {
+  box-shadow: inset 0px -1px 0px;
+}
+
+.filter-chip:hover { box-shadow: inset 0px -1px 0px; }
 
 
 /**
