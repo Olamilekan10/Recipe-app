@@ -614,6 +614,14 @@ main {flex-grow: 1 }
 
 /* filter button */
 
+.btn-filter { padding-inline: 12px; }
+
+.btn-filter .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 
 /**
  * Input
@@ -1130,6 +1138,23 @@ main {flex-grow: 1 }
 .overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+
+.recipe-container { padding-block-end: 36px; }
+
+.recipe-container .grid-list { position: relative; }
+
+.recipe-container .title-wrapper {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 16px;
+}
+
+.btn-filter.active {
+  position: fixed;
+  bottom: calc(var(--mobile-nav-height) + 16px);
 }
 
 
