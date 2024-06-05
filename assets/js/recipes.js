@@ -22,7 +22,7 @@ import { getTime } from "./module.js";
 
 const /** {NodeList} */ $accordions = document.querySelectorAll("[data-accordion]");
 
-const inintAccordion = function ($element) {
+const initAccordion = function ($element) {
 
     const /** {NodeList} */ $button = $element.querySelector("[data-accordion-btn]");
     let isExpanded = false; 
@@ -33,3 +33,4 @@ const inintAccordion = function ($element) {
     });
 
 } 
+
