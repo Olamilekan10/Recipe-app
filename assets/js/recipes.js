@@ -50,5 +50,33 @@ const /** {NodeList} */ $filterTogglers = document.querySelectorAll("[data-filte
 const /** {NodeElement} */ $overlay = document.querySelector("[data-overlay]");
 
 addEventOnElements($filterTogglers, "click", function () {
-    $filterBar.
+    $filterBar.classList.toggle("active");
+    $overlay.classList.toggle("active");
+    const bodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = bodyOverflow === 'hidden' ? 'visible' : 'hidden';
+});
+
+
+/**
+ * Filter submit and clear buttons
+ */
+
+const /** {NodeElement} */ $filterSubmit = document.querySelector("[data-filter-submit]");
+const /** {NodeElement} */ $filterClear = document.querySelector("[data-filter-clear]");
+const /** {NodeElement} */ $filterSearch = $filterBar.querySelector("input[type='search']");
+
+$filterSubmit.addEventListener('click', function () {
+    const /** {NodeList} */ $filterCheckboxes = $filterBar.querySelectorAll("input:checked");
+    
+    const /** Array */ queries = [];   
+    
+    if ($filterSearch.value) queries.push(["q", $filterSearch.value]);
+
+    if ($filterCheckboxes.length) {
+        for (const $checkbox of $filterCheckboxes) {
+            const /** {String} */ key = $checkbox.parentElement.parentElement.dataset.filter;
+            queries.push([key, $checkbox.value]);
+        }
+    }
+
 });
