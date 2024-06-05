@@ -22,6 +22,11 @@ import { getTime } from "./module.js";
 
 const /** {NodeList} */ $accordions = document.querySelectorAll("[data-accordion]");
 
+/**
+ * 
+ * @param {NodeList} $element Accordion node
+ */
+
 const initAccordion = function ($element) {
 
     const /** {NodeList} */ $button = $element.querySelector("[data-accordion-btn]");
@@ -34,3 +39,4 @@ const initAccordion = function ($element) {
 
 } 
 
+for (const $accordion of $accordions) initAccordion($accordion);
