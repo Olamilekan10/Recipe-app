@@ -73,10 +73,47 @@ $filterSubmit.addEventListener('click', function () {
     if ($filterSearch.value) queries.push(["q", $filterSearch.value]);
 
     if ($filterCheckboxes.length) {
+
         for (const $checkbox of $filterCheckboxes) {
             const /** {String} */ key = $checkbox.parentElement.parentElement.dataset.filter;
             queries.push([key, $checkbox.value]);
         }
     }
 
+   window.location = queries.length ? `?${queries.join("&").replace(/,/g, "=")}` : "/recipes.html";
+
+});
+
+$filterSearch.addEventListener("keydown", e => {
+    if (e.key === "Enter") $filterSubmit.click();
+});
+
+$filterClear,addEventListener("click", function () {
+
+    const /** {NodeList} */ $filterCheckboxes = $filterBar.querySelectorAll("input:checked");
+
+    $filterCheckboxes?.forEach(elem => elem.checked = false);
+    $filterSearch.value &&= "";
+
+});
+
+
+const /** {String} */ queryStr = window.location.search.slice(1);
+const /** {Array} */ queries = queryStr.split("&").map(i => i.split("="));
+
+const /** {NodeElement} */ $filterCount = document.querySelector("[data-filter-count]");
+
+if (queries.length) {
+    $filterCount.style.display = "block";
+    $filterCount.innerHTML = queries.length;
+} else {
+    $filterCount.style.display = "none";
+}
+
+queryStr && queryStr.split("g").map(i => {
+    if (i.split("=")[0] === "query") { 
+        $filterBar.querySelector("input[type='search']").value = i.split("=")[1].replace(/%20/g, " ");
+    } else {
+        $filterBar.querySelector(`[value="${i.split("=")[1].replace(/%20/g, " ")}"]`).checked = true;
+    }
 });
