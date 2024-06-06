@@ -110,8 +110,8 @@ if (queries.length) {
     $filterCount.style.display = "none";
 }
 
-queryStr && queryStr.split("g").map(i => {
-    if (i.split("=")[0] === "query") { 
+queryStr && queryStr.split("&").map(i => {
+    if (i.split("=")[0] === "q") { 
         $filterBar.querySelector("input[type='search']").value = i.split("=")[1].replace(/%20/g, " ");
     } else {
         $filterBar.querySelector(`[value="${i.split("=")[1].replace(/%20/g, " ")}"]`).checked = true;
@@ -141,6 +141,7 @@ const /** {Array} */ defaultQueries = [
 ];
 
 $gridList.innerHTML = $skeletonCard.repeat(20);
+let /** {String} */ nextPageUrl = "";
 
 const renderRecipe = data => {
 
@@ -155,6 +156,42 @@ const renderRecipe = data => {
             }
         } = item;
 
+        const /** {String} */ recipeId = uri.slice(uri.lastIndexOf("_") + 1);
+            const /** {Undefined || String} */ isSaved = window.localStorage.getItem(`cookio-recipe${recipeId}`);
+            
+            const /** {NodeElement} */ $card = document.createElement('div');
+            $card.classList.add("card");
+            $card.style.animationDelay = `${100 * index}ms`;
+
+            $card.innerHTML = `
+                    <figure class="card-media img-holder">
+                        <img src="${image}" width="195" height="195" loading="lazy" alt="${title}" class="img-cover">
+                    </figure>
+
+                    <div class="card-body">
+                        <h3 class="title-small">
+                            <a href="./detail.html?recipe=${recipeId}" class="card-link">${title ?? "Untitled"}</a>
+                        </h3>
+                        <div class="meta-wrapper">
+
+                            <div class="meta-item">
+                                <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+
+                                <span class="label-medium">${getTime(cookingTime).time || "<1"} ${getTime(cookingTime).timeUnit}</span>
+                            </div>
+
+                            <button class="icon-btn has-state ${isSaved ? "saved" : "removed"}" aria-label="Add to saved recipes" onClick="saveRecipe(this, '${recipeId}')">
+                                <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+
+                                <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
+                            </button>
+                        
+                        </div>
+                    </div>
+            `;
+
+        $gridList.appendChild($card);
+
     });
 
 }
@@ -163,6 +200,16 @@ let /** {Boolean} */ requestedBefore = true;
 
 fetchData(queries || defaultQueries, data => {
 
-    console.log(data);
+    const { _links: { next } } = data;
+    nextPageUrl = next?.href;
+
+    $gridList.innerHTML = "";
+    requestedBefore = false;
+
+    if (data.hits.length) {
+        renderRecipe(data);
+    } else {
+        $loadMore.innerHTML = `<p class="body-medium info-text">No recipe found</p>`;
+    }
 
 });
