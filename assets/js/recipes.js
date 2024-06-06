@@ -88,7 +88,7 @@ $filterSearch.addEventListener("keydown", e => {
     if (e.key === "Enter") $filterSubmit.click();
 });
 
-$filterClear,addEventListener("click", function () {
+$filterClear.addEventListener("click", function () {
 
     const /** {NodeList} */ $filterCheckboxes = $filterBar.querySelectorAll("input:checked");
 
@@ -238,6 +238,6 @@ window.addEventListener('scroll', async e => {
 
     }
 
-    if (!nextPageUrl) $loadMore.innerHTML = `<p class="body-medium info-text">No recipe found</p>`;
+    if (!nextPageUrl) $loadMore.innerHTML = `<p class="body-medium info-text">No more recipes</p>`;
 
 });
