@@ -196,6 +196,7 @@ const renderRecipe = data => {
 
 }
 
+
 let /** {Boolean} */ requestedBefore = true;
 
 fetchData(queries || defaultQueries, data => {
@@ -210,6 +211,21 @@ fetchData(queries || defaultQueries, data => {
         renderRecipe(data);
     } else {
         $loadMore.innerHTML = `<p class="body-medium info-text">No recipe found</p>`;
+    }
+
+});
+
+
+const /** {Number} */ CONTAINER_MAX_WIDTH = 1200;
+const /** {Number} */ CONTAINER_MAX_CARD = 6;
+
+window.addEventListener('scroll', async e => {
+
+    if ($loadMore.getBoundingClientRect().top < window.innerHeight && !requestedBefore && nextPageUrl) {
+
+        $loadMore.innerHTML = $skeletonCard.repeat(Math.round(($loadMore.clientWidth / (CONTAINER_MAX_WIDTH)) * CONTAINER_MAX_CARD));
+        requestedBefore = true;
+
     }
 
 });
