@@ -206,7 +206,7 @@ fetchData(queries || defaultQueries, data => {
     $gridList.innerHTML = "";
     requestedBefore = false;
 
-    if (data.hits.length) {
+    if (data.hits.length) { 
         renderRecipe(data);
     } else {
         $loadMore.innerHTML = `<p class="body-medium info-text">No recipe found</p>`;
