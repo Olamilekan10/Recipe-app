@@ -226,6 +226,9 @@ window.addEventListener('scroll', async e => {
         $loadMore.innerHTML = $skeletonCard.repeat(Math.round(($loadMore.clientWidth / (CONTAINER_MAX_WIDTH)) * CONTAINER_MAX_CARD));
         requestedBefore = true;
 
+        const /** {promise} */ response = await fetchData(nextPageUrl);
+        const /** {Object} */ data = await response.json();
+
     }
 
 });
