@@ -1207,6 +1207,28 @@ main {flex-grow: 1 }
   #DETAIL PAGE
 \*-----------------------------------*/
 
+
+.detail-banner { border-radius: var(--radius-8); }
+
+.detail-content { margin-block: 32px;  }
+
+.detail-page .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.detail-content .btn-secondary { flex-shrink: 0; }
+
+.detail-page .saved .unsaved-text,
+.detail-page .removed .save-text { display: block; }
+
+.detail-page .saved .save-text,
+.detail-page .removed .unsaved-text { display: none; }
+
+.
+
 /* Skeleton */
 
 
