@@ -1252,13 +1252,18 @@ main {flex-grow: 1 }
 
 .detail-stats .stats-item:not(:last-child) { border-inline-end: 1px solid var(--outline); }
 
-..detail-stats .stats-item .label-medium {
+.detail-stats .stats-item .label-medium {
   text-transform: capitalize;
   opacity: 0.8;
 }
 
 .detail-page .tag-list {
-  
+  justify-content: flex-start;
+  margin-block: 16px 32px;
+}
+
+.ingr-title {
+  display: flex;
 }
 
 /* Skeleton */
