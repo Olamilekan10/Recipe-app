@@ -1250,6 +1250,17 @@ main {flex-grow: 1 }
   padding-block: 16px;
 }
 
+.detail-stats .stats-item:not(:last-child) { border-inline-end: 1px solid var(--outline); }
+
+..detail-stats .stats-item .label-medium {
+  text-transform: capitalize;
+  opacity: 0.8;
+}
+
+.detail-page .tag-list {
+  
+}
+
 /* Skeleton */
 
 
