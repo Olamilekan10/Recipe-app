@@ -1237,6 +1237,19 @@ main {flex-grow: 1 }
   opacity: 0.8;
 }
 
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.detail-stats .stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-block: 16px;
+}
+
 /* Skeleton */
 
 
