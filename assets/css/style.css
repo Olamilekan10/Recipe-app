@@ -1227,7 +1227,15 @@ main {flex-grow: 1 }
 .detail-page .saved .save-text,
 .detail-page .removed .unsaved-text { display: none; }
 
-.
+.detail-author {
+  color: var(--on-background-variant);
+  margin-block: 16px;
+}
+
+.detail-author .span {
+  display: inline;
+  opacity: 0.8;
+}
 
 /* Skeleton */
 
