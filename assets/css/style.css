@@ -1285,6 +1285,17 @@ main {flex-grow: 1 }
 
 /* Skeleton */
 
+.detail-banner-skeleton { aspect-ratio: 1 / 1; }
+
+.detail-content-skeleton .title-skeleton {
+  height: 32px;
+  width: 50%;
+}
+
+.detail-content-skeleton .text-skeleton {
+  height: 14px;
+  width: 80%;
+}
 
 
 
