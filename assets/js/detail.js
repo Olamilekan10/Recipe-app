@@ -25,8 +25,6 @@ ACCESS_POINT += `/${window.location.search.slice(window.location.search.indexOf(
 
 fetchData(null, data => {
 
-    console.log(data);
-
     const {
         images: { LARGE, REGULAR, SMALL, THUMBNAIL },
         label: title,
@@ -45,7 +43,7 @@ fetchData(null, data => {
     document.title = `${title} - Cook.io`;
 
     const /** {Object} */ banner = LARGE ?? REGULAR ?? SMALL ?? THUMBNAIL;
-    const { url, bannerUrl, width, height } = banner;
+    const { url: bannerUrl, width, height } = banner; 
     const /** {Array} */ tags = [...cuisineType, ...dietLabels, ...dishType];
 
     let /** {String} */ tagElements = "";
@@ -73,7 +71,7 @@ fetchData(null, data => {
     });
 
     ingredientLines.map(ingredient => {
-        IngredientItems = `
+        IngredientItems += `
             <li class="ingr-item">${ingredient}</li>
         `;
     });
@@ -133,7 +131,7 @@ fetchData(null, data => {
                 <span class="label-medium">for ${servings} Servings</span>
             </h2>
 
-            ${tagElements ? `<ul class="body-large ingr-list"></ul>` : ''}
+            ${IngredientItems ? `<ul class="body-large ingr-list">${IngredientItems}</ul>` : ""}
 
         </div>
     `;
