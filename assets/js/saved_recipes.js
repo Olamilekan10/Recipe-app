@@ -15,5 +15,7 @@ import { getTime } from "./module.js";
 
 
 const /** {Array} */ savedRecipes = Object.keys(window.localStorage).filter(item => {
-    
+    return item.startsWith("cookio-recipe");
 });
+
+console.log(savedRecipes)
