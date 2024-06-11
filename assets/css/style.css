@@ -1297,7 +1297,7 @@ main {flex-grow: 1 }
   width: 80%;
 }
 
-
+.detail-content-skeleton .filter-chip-skeleton { width: 80%; }
 
 
 /*-----------------------------------*\

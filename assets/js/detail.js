@@ -5,3 +5,137 @@
  */
 
 "use strict";
+
+
+/**
+ * Import
+ */
+
+import { fetchData } from "./api.js";
+import { getTime } from "./module.js";
+
+
+/**
+ * Render data
+ */
+
+const /** {NodeElement} */ $detailContainer = document.querySelector("[data-detail-container]");
+
+ACCESS_POINT += `/${window.location.search.slice(window.location.search.indexOf("=") + 1)}`;
+
+fetchData(null, data => {
+
+    console.log(data);
+
+    const {
+        images: { LARGE, REGULAR, SMALL, THUMBNAIL },
+        label: title,
+        source: author,
+        ingredients = [],
+        totalTime: cookngTime = 0,
+        calories = 0,
+        cuisineType = [],
+        dietLabels = [],
+        dishType = [],
+        yield: servings = 0,  
+        ingredientLines = [],
+        uri
+    } = data.recipe;
+
+    document.title = `${title} - Cook.io`;
+
+    const /** {Object} */ banner = LARGE ?? REGULAR ?? SMALL ?? THUMBNAIL;
+    const { url, bannerUrl, width, height } = banner;
+    const /** {Array} */ tags = [...cuisineType, ...dietLabels, ...dishType];
+
+    let /** {String} */ tagElements = "";
+    let /** String */ IngredientItems = "";
+
+    const /** {String} */ recipeId = uri.slice(uri.lastIndexOf("_") + 1);
+    const /** {Undefined || String} */ isSaved = window.localStorage.getItem(`cookio-recipe${recipeId}`);
+
+    tags.map(tag => {
+
+        let /** {String} */ type = "";
+
+        if (cuisineType.includes(tag)) {
+            type = "cuisineType";
+        } else if (dietLabels.includes(tag)) {
+            type = "diet"; 
+        } else {
+            type = "dishType"; 
+        }
+
+        tagElements += `
+            <a href="./recipes.html?${type}=${tag.toLowerCase()}" class="filter-chip label-large has-state">${tag}</a>
+        `;
+
+    });
+
+    ingredientLines.map(ingredient => {
+        IngredientItems = `
+            <li class="ingr-item">${ingredient}</li>
+        `;
+    });
+
+    $detailContainer.innerHTML = `
+        <figure class="detail-banner img-holder">
+            <img src="${bannerUrl}" width="${width}" height="${height}" alt="Restaurant-Style Pan Seared Salmon" class="img-cover">
+        </figure>
+
+        <div class="detail-content">
+
+            <div class="title-wrapper">
+                <h1 class="display-small">Restaurant-Style Pan Seared Salmon</h1>
+
+                <button class="btn btn-secondary has-state has-icon removed">
+
+                    <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+
+                    <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
+
+                    <span class="label-large save-text">Save</span>
+                    <span class="label-large unsaved-text">Unsaved</span>
+
+                </button>
+            </div>
+
+            <div class="detail-author label-large">
+                <span class="span">by</span> Jenn Segal
+            </div>
+
+            <div class="detail-stats">
+
+                <div class="stats-item">
+                    <span class="display-medium">4</span>
+
+                    <span class="label-medium">Ingredients</span>
+                </div>
+
+                <div class="stats-item">
+                    <span class="display-medium">15</span>
+
+                    <span class="label-medium">Minutes</span>
+                </div>
+
+                <div class="stats-item">
+                    <span class="display-medium">384</span>
+
+                    <span class="label-medium">Calories</span>
+                </div>
+
+            </div>
+
+            <div class="tag-list"></div>
+
+            <h2 class="title-medium ingr-title">
+                Ingredients
+                <span class="label-medium">for 6 Servings</span>
+            </h2>
+
+            <ul class="body-large ingr-list"></ul>
+
+        </div>
+    `;
+
+});
