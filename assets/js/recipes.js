@@ -42,7 +42,7 @@ for (const $accordion of $accordions) initAccordion($accordion);
 
 
 /**
- * Filter bar toggle for mon=bile screen
+ * Filter bar toggle for mobile screen
 */
 
 const /** {NodeElement} */ $filterBar = document.querySelector("[data-filter-bar]");
