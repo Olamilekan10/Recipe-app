@@ -364,7 +364,7 @@ main {flex-grow: 1 }
 
 .grid-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 12px 8px;
 }
 
@@ -1327,7 +1327,65 @@ main {flex-grow: 1 }
   */
 
   :root {
-    
+
+    /**
+    * TYPOGRAPHY
+    */
+
+    /* font size */
+    --fs-display-large : 3.6rem;
+    --fs-display-medium : 3.6rem;
+    --fs-display-small : 3rem;
+
   }
+
+
+
+    /**
+    * REUSED STYLE
+    */
+
+    .container { padding-inline: 32px; }
+
+    .grid-list { grid-template-columns: repeat(auto-fill, minmax(172px, 1fr)); }
+
+    .section-title { margin-block-end: 24px; }
+
+    .snackbar-container {
+      right: auto;
+      bottom: 3px;
+      left: 32px;
+      max-width: 360px;
+      width: 100%;
+    }
+
+
+
+    /**
+    * TYPOGRAPHY
+    */
+
+    .display-large,
+    .display-medium { line-height: 44px; }
+
+    .display-small { line-height: 36px; }
+
+    .title-small {
+      font-size: 1.6rem;
+      font-weight: var(--weight-medium);
+      line-height: 24px;
+      letter-spacing: 0.15px;
+    }
+
+
+    /**
+    * HERO
+    */
+
+    .banner-card { background-image: url(../images/hero-banner-medium.jpg); }
+
+    .search-field { height: 72px; }
+
+    
 
 }
