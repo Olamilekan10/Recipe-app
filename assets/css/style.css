@@ -1692,9 +1692,23 @@ main {flex-grow: 1 }
 
     .detail-page {
       display: grid;
-      grid-template-columns: 0.8px 1fr;
+      grid-template-columns: 0.8fr 1fr;
       align-items: flex-start;
+      gap: 36px;
+    }
+
+    .detail-banner {
+      position: sticky;
+      top: calc(var(--header-height) + 32px);
+      margin-block-start: 16px;
+      max-width: 100%;
+    }
+
+    .detail-stats .stats-item {
+      padding-block: 24px;
+      gap: 8px;
     }
     
 
 }
+
