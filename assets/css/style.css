@@ -1680,4 +1680,21 @@ main {flex-grow: 1 }
 
 
 
+    /**
+    * DETAIL PAGE
+    */
+
+    .detail-page-main {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+    }
+
+    .detail-page {
+      display: grid;
+      grid-template-columns: 0.8px 1fr;
+      align-items: flex-start;
+    }
+    
+
 }
