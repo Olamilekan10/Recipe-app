@@ -1439,6 +1439,27 @@ main {flex-grow: 1 }
     * FILTER BAR
     */
 
-    
+    .filter-bar { border-radius: var(--radius-8) 0 0 var(--radius-8); }
+
+
+
+    /**
+    * DETAIL PAGE
+    */
+
+    .detail-banner { max-width: 420px; }
+
+    .detail-stats .stats-item { padding-block: 20px; }
 
 }
+
+
+
+
+/**
+* responsive media queries for screen larger than 600px 
+*/
+
+@media (min-width: 768px) {
+  
+} 
