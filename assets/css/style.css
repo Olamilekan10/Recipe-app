@@ -1587,6 +1587,22 @@ main {flex-grow: 1 }
     .display-medium { line-height: 52px; }
     
     .display-small { line-height: 44px; }
+
+
+
+    /**
+    * HEADER 
+    */
+
+    .header { padding-inline: 40px; }
+
+    .navbar-link { padding-inline: 40px; }
+
+
+
+    /**
+    * HERO
+    */
     
 
 
