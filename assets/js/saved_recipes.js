@@ -76,5 +76,7 @@ if (savedRecipes.length) {
 
     });
 } else { 
-    $savedRecipeContainer.innerHTML += html`<p></p>`;
+    $savedRecipeContainer.innerHTML +=`<p class="body-large">You don't have any saved recipes yet!</p>`;
 }
+
+$savedRecipeContainer.appendChild($gridList);

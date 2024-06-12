@@ -86,7 +86,7 @@ fetchData(null, data => {
             <div class="title-wrapper">
                 <h1 class="display-small">${title ?? "Untitled"}</h1>
 
-                <button class="btn btn-secondary has-state has-icon ${isSaved ? "saved" : "removed"}" onClick="savedRecipe(this, '${recipeId}')">
+                <button class="btn btn-secondary has-state has-icon ${isSaved ? "saved" : "removed"}" onClick="saveRecipe(this, '${recipeId}')">
 
                     <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
 
