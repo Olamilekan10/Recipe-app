@@ -1353,7 +1353,6 @@ main {flex-grow: 1 }
 
     .snackbar-container {
       right: auto;
-      bottom: 3px;
       left: 32px;
       max-width: 360px;
       width: 100%;
@@ -1489,6 +1488,14 @@ main {flex-grow: 1 }
 
 
     /**
+    * REUSED STYLE
+    */
+
+    .snackbar-container { bottom: 32px; }
+
+
+
+    /**
     * HEADER
     */
 
@@ -1506,6 +1513,35 @@ main {flex-grow: 1 }
       display: grid;
       grid-template-columns: 1fr min-content;
       align-items: center;
+      padding-inline: 24px;
+      opacity: 0.9;
     }
+
+
+    .navbar-link.active { opacity: 1; }
+
+    .navbar-link.active::before {
+      content: "";
+      order: 1;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: var(--radius-pill) var(--radius-pill) 0 0;
+    }
+
+
+
+    /**
+    * MOBILE NAV
+    */
+
+    .mobile-nav { display: none; }
+
+
+
+    /**
+    * FOOTER
+    */
+
+    .footer .logo { display: block; }
 
 } 
