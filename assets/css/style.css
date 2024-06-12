@@ -1406,4 +1406,39 @@ main {flex-grow: 1 }
       margin-inline: auto;
     }
 
+
+
+    /**
+    * RECIPE SLIDER
+    */
+
+    .slider-item { min-width: 206px; }
+
+
+
+    /**
+    * TAG
+    */
+
+    .tag .section-title { margin-block-end: 12px; }
+
+
+
+    /**
+    * FOOTER
+    */
+
+    .footer {
+      justify-content: space-between;
+      padding-inline: 32px;
+    }
+
+
+
+    /**
+    * FILTER BAR
+    */
+
+    
+
 }
