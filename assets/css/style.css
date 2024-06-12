@@ -1311,6 +1311,23 @@ main {flex-grow: 1 }
 
 
 
+
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/**
+* responsive media queries for screen larger than 600px 
+*/
+
+@media (min-width: 600px) {
+  
+  /**
+  * CUSTOM PROPERTY
+  */
+
+  :root {
+    
+  }
+
+}
