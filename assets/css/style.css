@@ -1500,4 +1500,12 @@ main {flex-grow: 1 }
 
     .navbar { margin-inline-start: auto; }
 
+    .navbar-link {
+      position: relative;
+      height: var(--header-height);
+      display: grid;
+      grid-template-columns: 1fr min-content;
+      align-items: center;
+    }
+
 } 
