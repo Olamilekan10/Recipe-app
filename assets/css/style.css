@@ -1456,7 +1456,7 @@ main {flex-grow: 1 }
 
 
 /**
-* responsive media queries for screen larger than 600px 
+* responsive media queries for screen larger than 768px 
 */
 
 @media (min-width: 768px) {
@@ -1544,4 +1544,58 @@ main {flex-grow: 1 }
 
     .footer .logo { display: block; }
 
-} 
+}
+
+
+
+/**
+* responsive media queries for screen larger than 992px 
+*/
+
+@media (min-width: 992px) {
+
+  /**
+  * CUSTOM PROPERTY
+  */
+
+  :root {
+    
+    /**
+    * TYPOGRAPHY
+    */
+
+    /* font size */
+    --fs-display-large: 5.7rem;
+    --fs-display-medium: 4.5rem;
+    --fs-display-small: 3.6rem;
+
+    /**
+    * OTHERS
+    */
+
+    --header-height : 80px;
+
+  }
+
+
+    /**
+    * TYPOGRAPHY
+    */
+
+    .display-large { line-height: 64px; }
+
+    .display-medium { line-height: 52px; }
+    
+    .display-small { line-height: 44px; }
+    
+
+
+    /**
+    * TAB
+    */
+
+    .tab .tab-list { margin-block-start: 0; }
+
+    .tab-btn { height: 64px; }
+
+}
