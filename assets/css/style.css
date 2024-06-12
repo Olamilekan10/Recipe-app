@@ -1603,6 +1603,16 @@ main {flex-grow: 1 }
     /**
     * HERO
     */
+
+    .hero .search-wrapper { max-width: 800px; }
+
+    .banner-card { background-image: url(../images/hero-banner-large.jpg); }
+
+    .banner-card > ,.label-medium {
+      font-size: 1.4rem;
+      font-weight: var(--weight-regular);
+      opacity: 0.8;
+    }
     
 
 
@@ -1613,5 +1623,37 @@ main {flex-grow: 1 }
     .tab .tab-list { margin-block-start: 0; }
 
     .tab-btn { height: 64px; }
+
+
+
+    /**
+    * RECIPE SLIDER
+    */
+
+    .slider-item { min-width: calc(20% - 6.4px); }
+
+
+
+    /**
+    * RECIPE PAGE
+    */
+
+    .filter-bar,
+    .filter-bar.active {
+      all: unset;
+      position: sticky;
+      top: var(--header-height);
+      margin-block-start: -16px;
+      height: calc(100vh - var(--header-height));
+      max-width: 360px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border-inline-end: 1px solid var(--outline);
+      overflow: auto;
+    }
+
+    .filter-bar::-webkit-scrollbar { width: 4px; }
+
 
 }
