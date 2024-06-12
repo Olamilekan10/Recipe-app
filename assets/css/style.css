@@ -1655,5 +1655,25 @@ main {flex-grow: 1 }
 
     .filter-bar::-webkit-scrollbar { width: 4px; }
 
+    .filter-bar::-webkit-scrollbar-thumb { background-color: var(--alpha-20); }
+
+    .filter-bar .close-btn { display: none; }
+
+    .filter-content { overflow-y: visible; }
+
+    .filter-content .search-wrapper { padding-block-start: 0; }
+
+    .recipe-page {
+      position: relative;
+      display: flex;
+    }
+
+    .btn-filter,
+    .overlay { display: none; }
+
+
+
+    
+
 
 }
